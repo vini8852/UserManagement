@@ -1,10 +1,24 @@
 import Navbar from "./Navbar";
 import { ReactNode } from "react";
+import { useRouter } from 'next/router';
+
 
 export default function Layout({ children }: { children: ReactNode }) {
-  const isLoggedIn = true; // Replace with real logic
+  const router = useRouter();
+  const isLoggedIn = true; 
   const handleLogin = () => console.log("Login clicked");
-  const handleLogout = () => console.log("Logout clicked");
+  const handleLogout = async ()=>{
+
+    const res = await fetch('/api/logout', {
+      method: 'POST',
+    });
+
+    if(res.ok){
+      router.push('/');
+    }
+  
+  }
+
 
   return (
     <>
