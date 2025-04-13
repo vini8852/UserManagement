@@ -55,7 +55,7 @@ const Navbar = ({
           </Link>
 
           {/* Menu items */}
-          {["Users", "Technologies", "Courses", "Report"].map((item) => (
+          {["Customers", "Technologies", "Courses", "Report"].map((item) => (
             <Link key={item} href={`/${item.toLowerCase()}`} passHref>
               <Button sx={{ color: "white", textTransform: "none" }}>
                 {item}
